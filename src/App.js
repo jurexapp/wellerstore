@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
+//components
+import HomePage from "./components/homepage";
+import Login from "./components/login";
+// import Randomquotes from "./components/fcc/randomquotes";
+// routing
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      {/* <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="about">About</Link>
+            </li>
+            <li>
+              <Link to="users">Users</Link>
+            </li>
+          </ul>
+        </nav> */}
+      <Routes>
+        <Route path="/about" element={<About />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/" element={<HomePage />}></Route>
+        {/* <Route path="/quotes" element={<Randomquotes />}></Route> */}
+      </Routes>
+    </Router>
   );
 }
 
-export default App;
+// dummies
+export function About() {
+  return <h2>About</h2>;
+}
+
+// export function Login() {
+//   return <h2>Login</h2>;
+// }
