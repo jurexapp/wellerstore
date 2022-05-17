@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 
 // component import
-import Header from ".//header";
+import Header from "./header";
 import Footer from "./footer";
 import Body from "./body";
 
